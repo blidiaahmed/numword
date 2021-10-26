@@ -31,10 +31,9 @@ int  Pow3Divider(int nn, int(&arr)[4])
 	float res = log(n) / log(1000);
 
 	int thousand_Pow_Level_Of_n = 3;
-	//if thousand_Pow_Level_Of_n > pow(1000.0, 5) { printf("out of limits");return 0; }
 	int div;
 	unsigned long long int p;
-	printf("\npow3div for n=%d*****\n", n);
+	//printf("\npow3div for n=%d*****\n", n);
 	while (thousand_Pow_Level_Of_n >= 0)
 	{
 		p = pow(1000, thousand_Pow_Level_Of_n);
@@ -47,8 +46,8 @@ int  Pow3Divider(int nn, int(&arr)[4])
 		
 		arr[thousand_Pow_Level_Of_n] = div;
 		std::cout << ",  div=" << div<<endl;
-		cout << typeid(div).name() << endl;
-		printf(", n becomes : %d\n ", n);
+		//cout << typeid(div).name() << endl;
+		//printf(", n becomes : %d\n ", n);
 		thousand_Pow_Level_Of_n -= 1;
 	}
 	return 0;
@@ -131,8 +130,11 @@ std::string  PronounceUpTo1000(int n)
 		{
 			strrt += "and ";
 		}
-		strr = PronounceDig( arr3[i],i);
-		strrt = strrt + strr+" ";
+		if (arr3[i] != 0) 
+		{
+			strr = PronounceDig(arr3[i], i);
+			strrt = strrt + strr + " ";
+		}
 		//std::cout <<strr.c_str()<< " ";
 		i--;
 	}
@@ -140,7 +142,7 @@ std::string  PronounceUpTo1000(int n)
 	strrt = strrt + strr;
 	//std::cout <<strr.c_str()<< " ";
 
-	printf("\nutt=%s\n ",strrt.c_str());
+	//printf("\nutt=%s\n ",strrt.c_str());
 	return strrt;
 }
 
@@ -154,17 +156,13 @@ std::string  PronounceTotal(int n)
 	}
 	static int arr[4];
 	std::string strr="";
-	std::cout << n;
+	//std::cout << n;
 	Pow3Divider(n, arr);
 	int i = 3;
-	
-
-
-
 	while (i >= 0)
 	{
-		printf("\n i=%d, arr=%d\n",i,arr[i]);
-		std:cout << "arr i="<<arr[i];
+		//printf("\n i=%d, arr=%d\n",i,arr[i]);
+		//std:cout << "arr i="<<arr[i];
 
 		if (arr[i] != 0)
 		{

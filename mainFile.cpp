@@ -9,9 +9,15 @@ int PowDivider(int nn, int(&arr)[3]);
 std::string  PronounceUpTo1000(int n);
 std::string  PronounceTotal(int n);
 
-int main()
+int main(int argc, const char* argv[])
 {
-	long int n = 423245;
+	int n;
+	if (argc > 1) {
+		n = std::atoi(argv[1]);
+	}
+	std::cout << argv[1];
+	
+	//long unsigned int n = 4294967;
 	static int arr[4];
 	static int arr1[3];
 	int m = 245;
