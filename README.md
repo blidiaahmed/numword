@@ -1,5 +1,5 @@
 # numword
-transfor numbers to sentences
+transform numbers to sentences
 
 
 
